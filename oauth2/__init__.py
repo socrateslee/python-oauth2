@@ -812,7 +812,7 @@ https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.1
             urllib.urlencode(args))
 
     def access_token(self, code, redirect_uri, secret_type=None,
-        endpoint='access_token'):
+        endpoint='access_token', type = 'web_server'):
         """Get an access token from the supplied code
 https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.2
 """
@@ -823,7 +823,7 @@ https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.2
         if redirect_uri is None:
             raise ValueError("Redirect_uri must be set.")
         args = {
-            'type': 'web_server',
+            'type': type,
             'client_id': self.client_id,
             'client_secret': self.client_secret,
             'code': code,
