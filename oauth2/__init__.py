@@ -570,6 +570,9 @@ class Client(httplib2.Http):
         else:
             headers.update(req.to_header())
 
+        print headers
+        print body
+
         return httplib2.Http.request(self, uri, method=method, body=body, 
             headers=headers, redirections=redirections, 
             connection_type=connection_type)
